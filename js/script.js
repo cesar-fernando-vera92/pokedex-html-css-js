@@ -24,10 +24,16 @@ const renderPokemon = async (pokemon) => {
 
   const data = await fetchPokemon(pokemon);
   
+ //
+
   if (data) {
     pokemonImage.style.display = 'block';
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
+    document.querySelector('.pokemon__type').innerHTML = `Type: ${data.types.map(type => type.type.name).join(', ')}`;
+    document.querySelector('.pokemon__height').innerHTML = `Height: ${data.height / 10} m`;
+    document.querySelector('.pokemon__weight').innerHTML = `Weight: ${data.weight / 10} kg`;
+
     const sprites = {
       animated: data['sprites']?.['versions']?.['generation-v']?.['black-white']?.['animated']?.['front_default'],
       official: data['sprites']?.['other']?.['official-artwork']?.['front_default'],
@@ -52,6 +58,9 @@ const renderPokemon = async (pokemon) => {
     pokemonImage.src = './images/not-found.png';
     pokemonName.innerHTML = 'Not found :c';
     pokemonNumber.innerHTML = '';
+    document.querySelector('.pokemon__type').innerHTML = '';
+    document.querySelector('.pokemon__height').innerHTML = '';
+    document.querySelector('.pokemon__weight').innerHTML = '';
   }
 }
 
