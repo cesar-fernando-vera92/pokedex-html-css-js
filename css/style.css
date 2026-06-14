@@ -51,7 +51,7 @@ main {
 }
 .pokemon__types {
   color: #000000;
-  font-size: 15px;
+  font-size: 12px;
   text-align: left;
   border: 2px solid;
   background-color: #283e06;
@@ -61,9 +61,9 @@ main {
   flex-direction: column;
   gap: 10px;
   top: 75%;
-  left: 70px;
-  width: 140px;
-  height: 120px;
+  left: 15%;
+  width: 30%;
+  height: 17%;
   padding: 10px;
   box-shadow: -3px 4px 0 #203500, -5px 7px 0 #333
 }
